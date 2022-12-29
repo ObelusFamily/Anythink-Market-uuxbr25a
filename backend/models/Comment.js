@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+// define the layout
 var CommentSchema = new mongoose.Schema(
   {
     body: String,
@@ -18,5 +18,5 @@ CommentSchema.methods.toJSONFor = function(user) {
     seller: this.seller.toProfileJSONFor(user)
   };
 };
-
+// actually create the model and can instantiate it later 
 mongoose.model("Comment", CommentSchema);
